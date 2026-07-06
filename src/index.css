@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-space-black text-white font-sans overflow-x-hidden antialiased;
+  }
+
+  /* Sleek custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dfc080;
+  }
+}
+
+/* Glassmorphism premium panels */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(223, 192, 128, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Glowing text & drop shadow effects */
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(223, 192, 128, 0.3), 0 0 20px rgba(223, 192, 128, 0.1);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 15px rgba(192, 132, 252, 0.4);
+}
+
+/* Custom layout constraints */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  min-height: 100vh;
+}
+
+/* Smooth hide default cursor when ghost cursor is active */
+.custom-cursor-active {
+  cursor: none !important;
+}
+.custom-cursor-active a,
+.custom-cursor-active button,
+.custom-cursor-active [role="button"] {
+  cursor: none !important;
+}
+
+/* Handwritten sticky note styling */
+.sticky-note {
+  position: relative;
+  background: rgba(20, 20, 20, 0.85);
+  border-left: 3px solid #dfc080;
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.6);
+}
