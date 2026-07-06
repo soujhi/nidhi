@@ -56,11 +56,19 @@ Happy 20, idiot.
 
 — Soujhenya ❤️`;
 
-  // Display letter directly without typewriter animation
+  // Dynamic typewriter simulation for Section 10 (index 9)
   useEffect(() => {
     if (activeSection === 9 && !letterTriggered) {
       setLetterTriggered(true);
-      setLetterText(fullLetter);
+      let i = 0;
+      const interval = setInterval(() => {
+        setLetterText((prev) => prev + fullLetter.charAt(i));
+        i++;
+        if (i >= fullLetter.length) {
+          clearInterval(interval);
+        }
+      }, 35); // Typing speed
+      return () => clearInterval(interval);
     }
   }, [activeSection, letterTriggered]);
 
@@ -492,7 +500,7 @@ Happy 20, idiot.
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ type: 'spring', stiffness: 80, damping: 15 }}
+                transition={{ type: 'spring', stiffness: 30, damping: 50 }}
                 className={`relative bg-zinc-950 p-4 border border-white/5 rounded-lg shadow-2xl flex flex-col hover:-translate-y-2 hover:border-gold-champagne/30 transition-all duration-500 ${
                   index % 2 === 1 ? 'md:translate-y-16' : ''
                 }`}
@@ -960,7 +968,7 @@ Happy 20, idiot.
             </div>
             
             {/* Displaying typed letter */}
-            <div className="whitespace-pre-line font-handwritten text-gold-champagne/90 text-lg md:text-xl leading-8 tracking-tight text-left min-h-[400px]">
+            <div className="whitespace-pre-line font-handwritten text-gold-champagne/90 text-2xl md:text-3xl leading-relaxed tracking-wide text-left min-h-[400px]">
               {letterText}
               <span className="inline-block w-1.5 h-5 bg-gold-champagne ml-1 animate-pulse" />
             </div>
