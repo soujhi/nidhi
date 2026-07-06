@@ -500,7 +500,7 @@ Happy 20, idiot.
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ type: 'spring', stiffness: 30, damping: 50 }}
+                transition={{ type: 'spring', stiffness: 20, damping: 70 }}
                 className={`relative bg-zinc-950 p-4 border border-white/5 rounded-lg shadow-2xl flex flex-col hover:-translate-y-2 hover:border-gold-champagne/30 transition-all duration-500 ${
                   index % 2 === 1 ? 'md:translate-y-16' : ''
                 }`}
